@@ -1,0 +1,82 @@
+<div class="data-form">
+  <form class="form-signin" action="<%=`/vacations/${vacations._id}/update?_method=PUT`%>" method="POST">
+      <h2 class="form-signin-heading">Edit a Culinary Vacation Package:</h2>
+
+      <label for="inputTitle">Title</label>
+      <input type="text" name="title" id="inputTitle" class="form-control" minlength="3" autofocus value="<%= vacations.title %>" required placeholder="Enter vacation title" />
+
+      <label for="inputDescription">Description</label>
+      <input type="text" name="description" id="inputDescription" class="form-control" placeholder="Description of package" value="<%= vacations.description %>" required />
+
+      <label for="inputCurrentCuisinee">Current cuisine type</label>
+      <input type="text" name="cuisinee" id="cuisinee" class="form-control" value="<%= vacations.cuisine %>" placeholder="Current cuisine type" readonly />
+
+      <label for="inputNewCuisine">New cuisine type</label>
+      <select name="cuisine" id="cuisine" class="form-control" value="<%= vacations.cuisine %>">
+          <option value="" disabled selected>--Please choose an option--</option>
+          <option value="Continental">Continental</option>
+          <option value="Traditional">Traditional</option>
+          <option value="Haute-cuisine">Haute-cuisine</option>
+          <option value="Nouvelle-cuisine">Nouvelle-cuisine</option>
+          <option value="Fusion">Fusion</option>
+          <option value="Vegan">Vegan</option>
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Asian">Asian</option>
+          <option value="Indian">Indian</option>
+          <option value="Middle-Eastern">Middle-Eastern</option>
+          <option value="African">African</option>
+          <option value="Central American">Central American</option>
+          <option value="South American">South American</option>
+      </select>
+
+      <label for="inputImage">Vacation 'here image' filename</label>
+      <input type="text" name="heroImage" id="heroImage" class="form-control" value="<%= vacations.heroImage %>" placeholder="Filename for vacation package hero image, e.g., Thai.jpg" />
+
+      <label for="inputMaxTravelers">Max Travelers</label>
+      <input type="number" name="maxTravelers" id="maxTravelers" class="form-control" value="<%= vacations.maxTravelers %>" placeholder="Maximum Travelers" placeholder="Maximum * of travelers" min="0" max="25" required/>
+
+      <label for="inputCost">Cost ($)</label>
+      <input type="text" name="cost" id="cost" class="form-control" value="<%= vacations.cost %>" placeholder="Per person cost" min="0" required />
+
+      <label for="inputDestination">Destination</label>
+      <input type="text" name="destination" id="destination" class="form-control" value="<%= vacations.destination %>" placeholder="Enter vacation package destination: City, Country" required />
+
+      <label for="inputDepartureLocationn">Current Departure Location:</label>
+      <input type="text" name="departureLocationn" id="departureLocationn" class="form-control" value="<%= vacations.departureLocation %>" readonly />
+
+      <label for="inputNewLocation">New Departure Location</label>
+      <select name="departureLocation" id="departureLocation" class="form-control" value="<%= vacations.departureLocation %>">
+        <option value="" disabled selected>--Please choose an option--</option>
+        <option value="New York (JFK)">New York (JFK)</option>
+        <option value="Boston (BOS)">Boston (BOS)</option>
+        <option value="Chicago (ORD)">Chicago (ORD)</option>
+        <option value="Miami (MIA)">Miami (MIA)</option>
+        <option value="St. Louis (STL)">St. Louis (STL)</option>
+        <option value="Dallas (DFW)">Dallas (DFW)</option>
+        <option value="Seattle (SEA)">Seattle (SEA)</option>
+        <option value="San Francisco (SFO)">San Francisco (SFO)</option>
+      </select>
+
+      <label for="inputDepartureDate">Departure Date</label>
+      <input type="date" name="departureDate" class="form-control" id="departureDate" minclass="form-control" value="<%= vacations.departureDate %>" placeholder="Leaving Date" required  />
+
+      <label for="inputReturnDate">Return Date</label> 
+      <input type="date" name="returnDate" id="returnDate" class="form-control" value="<%= vacations.returnDate %>" placeholder="Returning Date" required onblur="compare()";/>
+
+      <br />
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+  </form>
+</div>
+
+<script>
+  function compare()
+  {
+      var startDt = document.getElementById("departureDate").value;
+      var endDt = document.getElementById("returnDate").value;
+
+      if( (new Date(startDt).getTime() > new Date(endDt).getTime()))
+      {
+        document.getElementById("demo").innerHTML = alert('Return date should be after a Departure date.');
+      }
+  }
+</script>

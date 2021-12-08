@@ -1,0 +1,94 @@
+<h1 class="center">Culinary Package Data for
+  <%= vacations.title %>
+</h1>
+<img src="<%= `/images/${vacations.heroImage}` %>" height="300px" width="300px" >
+<table class="table">
+  <br><br>
+  <tr>
+    <th>Title</th>
+    <td>
+      <%= vacations.title %>
+    </td>
+  </tr>
+  <tr>
+    <th>Description</th>
+    <td>
+      <%= vacations.description%>
+    </td>
+  </tr>
+  <tr>
+    <th>Max Travelers</th>
+    <td>
+      <%= vacations.maxTravelers%>
+    </td>
+  </tr>
+  <tr>
+    <th>Cost</th>
+    <td>
+      <%= vacations.cost%>
+    </td>
+  </tr>
+  <tr>
+    <th>Cuisine</th>
+    <td>
+      <%= vacations.cuisine%>
+    </td>
+  </tr>
+  <tr>
+    <th>Hero Image</th>
+    <td>
+      <%= vacations.heroImage%>
+    </td>
+  </tr>
+  <tr>
+    <th>Destination</th>
+    <td>
+      <%= vacations.destination%>
+    </td>
+  </tr>
+  <tr>
+    <th>Departure Location</th>
+    <td>
+      <%= vacations.departureLocation%>
+    </td>
+  </tr>
+  <tr>
+    <th>Departure Date</th>
+    <td>
+      <%= vacations.departureDate%>
+    </td>
+  </tr>
+  <tr>
+    <th>Return Date</th>
+    <td>
+      <%= vacations.returnDate%>
+    </td>
+  </tr>
+  <tr>
+    <th>Enter city name to check weather details</th>
+  <td>
+    <form action="/weather" method="post">
+      <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
+  </td>
+  <td>
+    <input type="submit" class="ghost-button" value="Get Weather">
+  </form>
+  </td>
+</tr>
+</table>
+
+<script src="public/js/app.js"></script>
+<script src="public/js/forecast.js"></script>
+
+
+<div>
+  <a class="button" href="<%=`/vacations/${vacations._id}/edit`%>">
+    Edit Culinary Package Details
+  </a>
+</div>
+<div>
+  <a class="button" href="<%= `/vacations/${vacations._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete this record?')" a>Delete</a>
+</div>
+<div>
+  <a class="button" href="/vacations">View all vacations</a>
+</div>
