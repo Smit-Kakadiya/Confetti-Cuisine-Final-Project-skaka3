@@ -80,7 +80,7 @@
 <script src="public/js/app.js"></script>
 <script src="public/js/forecast.js"></script>
 
-
+<% if (loggedIn) { %>
 <div>
   <a class="button" href="<%=`/vacations/${vacations._id}/edit`%>">
     Edit Culinary Package Details
@@ -92,3 +92,4 @@
 <div>
   <a class="button" href="/vacations">View all vacations</a>
 </div>
+<% } %>
