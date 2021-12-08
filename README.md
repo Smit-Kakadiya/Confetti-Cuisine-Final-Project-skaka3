@@ -1,6 +1,8 @@
 # Confetti Cuisine Final Project
 
-In this repository, I have implemented final delivery of Confetti-Cuisine project in which I have gone over Node, Express, EJS, MongoDB and JSON with some front-end web based technologies. I also attached snapshots of all modules that will be used to understand every page with proper validation and flow. In order to run this project into your system, please download this repository and follow below steps that shows how to install EJS and Express into your system.
+In this repository, I have implemented final delivery of Confetti-Cuisine project in which I have gone over Node, Express, EJS, MongoDB and JSON with some front-end web based technologies. I also attached snapshots of all modules that will be used to understand every page with proper validation and flow. In order to run this project into your system, please download this repository and follow below steps that shows how to install EJS and Express into your system. Along with that, I also have deployed this project in Heroku Cloud Platform using my github repository and the The link of this project is here:
+https://smit-kakadiya.herokuapp.com/
+
 
 ## Step 1: Initialization of Node
 ```bash
