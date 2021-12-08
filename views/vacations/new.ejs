@@ -55,9 +55,22 @@
       <input type="date" name="departureDate" id="inputDepartureDate" min="2022-01-01" class="form-control" placeholder="Leaving Date" required />
 
       <label for="inputReturnDate">Return Date</label>
-      <input type="date" name="returnDate" id="inputReturnDate" min="2021-01-08" class="form-control" placeholder="Returning Date" required />
+      <input type="date" name="returnDate" id="inputReturnDate" min="2021-01-08" class="form-control" placeholder="Returning Date" required onblur="compare()"/>
 
       <br />
       <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
   </form>
 </div>
+
+<script>
+  function compare()
+  {
+      var startDt = document.getElementById("departureDate").value;
+      var endDt = document.getElementById("returnDate").value;
+
+      if( (new Date(startDt).getTime() > new Date(endDt).getTime()))
+      {
+        document.getElementById("demo").innerHTML = alert('Return date should be after a Departure date.');
+      }
+  }
+</script>
